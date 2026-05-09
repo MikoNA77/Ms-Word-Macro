@@ -1,0 +1,16 @@
+Sub Resize_6x6_text_wrapping()
+Dim i As Long
+With ActiveDocument
+        For i = 1 To .Shapes.Count
+            If .Shapes(i).Type = msoPicture Then
+                With .Shapes(i)
+                    .LockAspectRatio = msoFalse
+                    .LockAnchor = msoFalse
+                    'set the width or the height and delete the line you don't need
+            .Width = CentimetersToPoints(6)
+            .Height = CentimetersToPoints(6)
+                End With
+            End If
+        Next i
+End With
+End Sub
