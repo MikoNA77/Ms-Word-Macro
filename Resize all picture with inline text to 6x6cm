@@ -1,0 +1,19 @@
+Sub Resize_6x6_inline_w_text()
+'
+' Resize_6x6_inline_w_text Macro
+'
+'
+Dim i As Long
+With ActiveDocument
+    For i = 1 To .InlineShapes.Count
+        With .InlineShapes(i)
+            .LockAspectRatio = msoFalse
+            .ScaleHeight = 100
+            .ScaleWidth = 100
+                        'set the width or the height and delete the line you don't need
+            .Width = CentimetersToPoints(6)
+            .Height = CentimetersToPoints(6)
+        End With
+    Next i
+End With
+End Sub
